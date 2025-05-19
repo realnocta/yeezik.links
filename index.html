@@ -102,19 +102,28 @@
             opacity: 0.7;
         }
 
-        .section-title {
-            width: 100%;
-            max-width: 500px;
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            color: #e61919;
-            font-size: 1.4em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            animation: flash 2s infinite;
-            font-weight: bold;
-        }
+.section-title {
+    padding-top: 40px;
+    margin-bottom: 10px;
+    color: #e61919;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: flash 2s infinite;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::before {
+    content: "";
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 auto 20px auto;
+}
 
         @keyframes flash {
             0% { opacity: 1; }
