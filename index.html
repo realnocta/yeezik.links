@@ -106,38 +106,34 @@
             font-size: 1.4em;
             text-transform: uppercase;
             letter-spacing: 1px;
-            animation: flash 2s infinite;
             font-weight: bold;
             text-align: center;
             width: 100%;
             max-width: 500px;
         }
 
-        .section-title::before {
+        .section-title::before,
+        .separator {
             content: "";
             display: block;
-            width: 100%;
-            max-width: 500px;
+            width: 60%;
+            max-width: 400px;
             height: 1px;
-            background-color: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.6), rgba(255,255,255,0.1));
+            background-size: 200% 100%;
+            background-repeat: no-repeat;
             margin: 0 auto 20px auto;
-            animation: flash 2s infinite;
-        }
-
-        @keyframes flash {
-            0% { opacity: 1; }
-            50% { opacity: 0.3; }
-            100% { opacity: 1; }
+            animation: gradientSlide 3s linear infinite;
         }
 
         .separator {
-            width: 100%;
-            max-width: 500px;
-            height: 1px;
-            border: none;
-            background-color: rgba(255, 255, 255, 0.2);
             margin: 40px auto;
-            animation: flash 2s infinite;
+            border: none;
+        }
+
+        @keyframes gradientSlide {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
         }
 
         .video-container {
