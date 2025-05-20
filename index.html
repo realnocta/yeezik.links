@@ -111,38 +111,35 @@
   font-weight: bold;
   text-align: center;
   width: 100%;
-  max-width: 500px;
-  animation: flash 2s infinite; /* ✅ Questo è il punto chiave */
-}
-
-@keyframes flash {
-  0%, 100% { opacity: 1; color: #e61919; }
-  50% { opacity: 0.3; color: #fff; }
+  max-width: 400px;
+  animation: blink 2s infinite;
 }
     
-    .section-title::before,
-    .separator {
-      content: "";
-      display: block;
-      width: 60%;
-      max-width: 400px;
-      height: 1px;
-      background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.6), rgba(255,255,255,0.1));
-      background-size: 200% 100%;
-      background-repeat: no-repeat;
-      margin: 0 auto 20px auto;
-      animation: gradientSlide 3s linear infinite alternate;
+.section-title::before {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+  margin: 0 auto 20px auto;
+  border-radius: 2px;
+}
+
+    @keyframes slideBackAndForth {
+      0% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
 
-    
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+
     .separator {
       margin: 40px auto;
-      border: none;
-    }
-
-    @keyframes gradientSlide {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
+      border: 400px auto;
     }
 
     .video-container {
