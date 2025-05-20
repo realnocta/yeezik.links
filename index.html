@@ -115,7 +115,11 @@
   animation: flash 2s infinite; /* ✅ Questo è il punto chiave */
 }
 
-
+@keyframes flash {
+  0%, 100% { opacity: 1; color: #e61919; }
+  50% { opacity: 0.3; color: #fff; }
+}
+    
     .section-title::before,
     .separator {
       content: "";
@@ -129,11 +133,6 @@
       margin: 0 auto 20px auto;
       animation: gradientSlide 3s linear infinite alternate;
     }
-
-@keyframes flash {
-  0%, 100% { opacity: 1; color: #e61919; }
-  50% { opacity: 0.3; color: #fff; }
-}
 
     
     .separator {
